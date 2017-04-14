@@ -4,8 +4,7 @@ import { Provider } from 'react-redux';
 import configureStore from './configureStore';
 import Root from './Root.jsx';
 import rootReducer from './rootReducer.js';
-
-import './fixed-data-table.css';
+import './root.scss';
 
 function main() {
     const store = configureStore(rootReducer);

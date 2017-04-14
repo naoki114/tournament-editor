@@ -1,5 +1,5 @@
 import React from 'react';
-import MainPanelContainer from './MainPanelContainer';
+import MainPanel from './MainPanel.jsx';
 
 export default class Root extends React.PureComponent {
     static get propTypes() {
@@ -9,7 +9,7 @@ export default class Root extends React.PureComponent {
     render() {
         return (
             <div className="root">
-                <MainPanelContainer />
+                <MainPanel />
             </div>
         );
     }
