@@ -1,0 +1,35 @@
+ > .leftPanel {
+    box-shadow: 3px 0px 3px rgba(0, 0, 0, 0.3);
+    width: 40px;
+    height: 100%;
+    background-color: white;
+    transition: width ease 0.2s;
+    > .openButton {
+        outline: none;
+        border-radius: 5px;
+        width: 20px;
+        height: 20px;
+    }
+    &.isOpen {
+        width: 150px;
+    }
+    > .content {
+        > .body {
+            > .participantRow {
+                width: auto;
+                border-style: solid;
+                border-width: 0px 1px 1px 1px;
+                border-color: black;
+                &:first-child {
+                    border-top-width: 1px;  
+                }
+                > .delete {
+                    width: 15px;
+                    height: 15px;
+                    outline: none;
+                    border: none;
+                }
+            }
+        }
+    }
+ }

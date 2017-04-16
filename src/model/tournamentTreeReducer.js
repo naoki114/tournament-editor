@@ -9,9 +9,9 @@ export const initialState = Immutable.fromJS({
             parentId: '',
             leftChildId: '2',
             rightChildId: '3',
-            winnerId: '2', // 勝ったプレイヤーのId
-            leftPlayerPoint: null,
-            rightPlayerPoint: null,
+            winnerParticipantId: '2', // 勝ったプレイヤーのId
+            leftPoint: null,
+            rightPoint: null,
             leftParticipantId: '2',
             rightParticipantId: '3',
         },
@@ -19,9 +19,9 @@ export const initialState = Immutable.fromJS({
             parentId: '1',
             leftChildId: null,
             rightChildId: null,
-            winnerId: '2',
-            leftParticipantPoint: null,
-            rightParticipantPoint: null,
+            winnerParticipantId: '2',
+            leftPoint: null,
+            rightPoint: null,
             leftParticipantId: '2',
             rightParticipantId: '1',
 
@@ -30,9 +30,9 @@ export const initialState = Immutable.fromJS({
             parentId: '1',
             leftChildId: null,
             rightChildId: null,
-            winnerId: '3',
-            leftParticipantPoint: null,
-            rightParticipantPoint: null,
+            winnerParticipantId: '3',
+            leftPoint: null,
+            rightPoint: null,
             leftParticipantId: '4',
             rightParticipantId: '3',
         }

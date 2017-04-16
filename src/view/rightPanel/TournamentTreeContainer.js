@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import TournamentTree from './TournamentTree.jsx';
 
 function mapStateToProps(state) {
-    console.log(state);
     return {
         participants: state.participant,
         nodes: state.tournamentTree,

@@ -1,0 +1,15 @@
+html {
+    body {
+        height: 100vh;
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+        #root > .root {
+            display: flex;
+            height: 100vh;
+            width: 100vw;
+            @import './leftPanel/leftPanel.scss';
+            @import './rightPanel/rightPanel.scss';
+        }
+    }
+}

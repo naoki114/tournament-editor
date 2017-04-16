@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import configureStore from './configureStore';
-import Root from './Root.jsx';
+import Root from './view/Root.jsx';
 import rootReducer from './rootReducer.js';
-import './root.scss';
+import './view/root.scss';
 
 function main() {
     const store = configureStore(rootReducer);

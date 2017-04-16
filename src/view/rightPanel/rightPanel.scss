@@ -1,0 +1,51 @@
+> .rightPanel {
+    flex: 1;
+    height: 100%;
+    overflow: auto;
+    $participantNameHeight: 30px;
+    > .tournamentTree {
+        height: 100%;
+        display: flex;
+        .node {
+            height: 100%;
+            min-height: #{ $participantNameHeight * 2 };
+            display: flex;
+            .children {
+                height: 100%;
+                min-height: #{ $participantNameHeight * 2 };
+            }
+            .winner {
+                height: 100%;
+            }
+            .right, .left { 
+                height: 50%;
+                display: flex;
+            }
+            .right > .versus.participantName {
+                > .text {
+                    height: $participantNameHeight;
+                    top: calc( 100% - #{ $participantNameHeight});
+                }
+            }
+            .left > .versus.participantName {
+                > .text {
+                    height: $participantNameHeight;
+                    top: 0;
+                }
+            }
+        }
+        .participantName {
+            position: relative;
+            height: 100%;
+            width: 100px;
+            min-height: #{$participantNameHeight * 2};
+            > .text {
+                height: #{$participantNameHeight * 2};
+                min-height: #{$participantNameHeight * 2};
+                position: absolute;
+                top: calc( 50% - #{ $participantNameHeight / 2 });
+                width: 100px;
+            }
+        }
+    }
+}

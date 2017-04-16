@@ -6,16 +6,16 @@ export const initialState = Immutable.fromJS({
     idList: ['1', '2', '3', '4'],
     byId: {
         1: {
-            participantName: '参加者A',
+            name: '参加者A',
         },
         2: {
-            participantName: '参加者B',
+            name: '参加者B',
         },
         3: {
-            participantName: '参加者C',
+            name: '参加者C',
         },
         4: {
-            participantName: '参加者D',
+            name: '参加者D',
         }
     }
 });

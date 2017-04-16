@@ -1,6 +1,7 @@
 import React from 'react';
 import Immutable from 'immutable';
 import _ from 'lodash';
+import classNames from 'classnames';
 
 export default class TournamentTree extends React.PureComponent {
     static get propTypes() {
@@ -21,29 +22,36 @@ export default class TournamentTree extends React.PureComponent {
         const leftChildId = node.get('leftChildId');
         const rightChildId = node.get('rightChildId');
         const nextStageLevel = stageLevel + 1;
-        console.log(leftChildId, rightChildId);
         return (
             <div className="node">
-                <div className="right">
-                    {this.renderParticipantName(node.get('leftParticipantId'))}
-                    {this.renderNode(leftChildId, nodeById, nextStageLevel)}
-                </div>
-                <div className="left">
-                    {this.renderParticipantName(node.get('rightParticipantId'))}
-                    {this.renderNode(rightChildId, nodeById, nextStageLevel)}
-                </div>
+                {this.renderParticipantName('winner', node.get('winnerParticipantId'))}
+                <div className="children">
+                    <div className="right">
+                        {this.renderParticipantName('versus', node.get('leftParticipantId'))}
+                        {this.renderNode(leftChildId, nodeById, nextStageLevel)}
+                    </div>
+                    <div className="left">
+                        {this.renderParticipantName('versus', node.get('rightParticipantId'))}
+                        {this.renderNode(rightChildId, nodeById, nextStageLevel)}
+                    </div>
+                 </div>
             </div>
         );
     }
 
-    renderParticipantName(participantId) {
+    renderParticipantName(className, participantId) {
         const participants = this.props.participants;
         const participantsById = participants.get('byId');
-        console.log(participantsById, participantId);
-        const participantName = participantsById.getIn([participantId, 'participantName']);
+        const participantName = participantsById.getIn([participantId, 'name']);
+        const participantNameClassNames = classNames(
+            className,
+            {
+                participantName: true,
+            }
+        );
         return (
-            <div className="participantName">
-                {participantName}
+            <div className={participantNameClassNames}>
+                <span className="text">{participantName}</span>
             </div>
         );
     }
@@ -53,7 +61,7 @@ export default class TournamentTree extends React.PureComponent {
         const nodeById = nodes.get('byId');
         const rootNodeId = nodes.get('rootId');
         return (
-            <div className="nodes">
+            <div className="tournamentTree">
                 {this.renderNode(rootNodeId, nodeById, 0)}
             </div>
         )
